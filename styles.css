@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+:root {
+  --text-color: #ffecec;
+  --font-family: Inter, sans-serif;
+  --background: #653cbc;
+  --button-bg-color: hsl(337, 74%, 45%);
+  --border-radius: 8px;
+  --spacing: 1rem;
+  --transition: 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+body {
+  background: #653cbc;
+  color: #ffecec;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", sans-serif;
+  color: #ffecec;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: #ffecec;
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover {
+  color: rgb(190, 181.7666666667, 250.2333333333);
+}
+
+button, .btn {
+  width: auto;
+  background-color: hsl(337, 74%, 45%);
+  color: #ffecec;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+button:hover, .btn:hover {
+  background-color: hsl(337, 74%, 55%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hello-backdrop {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  backdrop-filter: blur(2px);
+  animation: fade-in 200ms ease-in-out;
+}
+
+.hello-container {
+  display: grid;
+  grid-template: repeat(2, 1fr)/2fr 2fr 1.5fr;
+  gap: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background-color: #6956f4;
+  height: min-content;
+  width: 90%;
+  max-width: 600px;
+  z-index: 2;
+  transition: var(--transition);
+  animation: fade-in 200ms ease-in-out;
+}
+.hello-container span {
+  grid-area: 1/1/1/4;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.hello-container button {
+  grid-area: 2/3/3/4;
+  margin: 0.5rem;
+  z-index: 2;
+}
+
+.hidden {
+  transition: var(--transition);
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
