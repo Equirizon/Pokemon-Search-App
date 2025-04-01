@@ -9,7 +9,7 @@ const logoAnimation = (display = 'block', width = '7rem') => {
         if (/\s/.test(display) || /\s/.test(width)) {
             throw new Error(`The "display" and "width" parameters cannot have empty strings. Received "${width.replace(/\s/g, '•')}".`);
         }
-        const unitsRegex = /^\d+(?:.\d+)?(?:px|em|rem)$/i 
+        const unitsRegex = /^\d+(?:.\d+)?(?:px|em|rem)$/i; 
         if (!unitsRegex.test(width)) {
             throw new TypeError(`Invalid width argument. Ensure the width includes valid CSS units (Available units: px, em, rem). Received: ${width}.`);
         }
@@ -18,20 +18,20 @@ const logoAnimation = (display = 'block', width = '7rem') => {
             throw new TypeError(`Invalid width value. Received: "${width}".`);
         }
     } catch (error) {
-        document.body.insertAdjacentHTML('afterbegin', `<div style="color: red;">Logo failed to load.</div>`);
+        document.body.insertAdjacentHTML('afterbegin', '<div style="color: red;">Logo failed to load.</div>');
         console.error('Error initializing logo module:', error);
         return;
     }
     
     const injectLogoHTML = () => {
         if (!document.querySelector('header')) {
-            console.warn('Header element not found. Creating and adding <header> to <body>.');
+            // console.warn('Header element not found. Creating and adding <header> to <body>.');
             const header = document.createElement('header');
             document.body.insertAdjacentElement('afterbegin', header);
         }
 
         if (!document.querySelector('.my-logo-module')) {
-            console.warn('Class "my-logo-module" not found. Adding <img> element to the header.');
+            // console.warn('Class "my-logo-module" not found. Adding <img> element to the header.');
             const header = document.querySelector('header');
             const logoDiv = document.createElement('div');
             logoDiv.id = 'div-logo';

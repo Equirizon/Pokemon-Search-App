@@ -9,7 +9,7 @@
     <link rel="icon" href="/assets/icon1.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="script.js" defer></script>
-    <meta name="description" content="Your description here">
+    <meta name="description" content="Pokemon search app.">
     <meta name="keywords" content="HTML, CSS, SCSS, JavaScript">
     <meta name="author" content="Equirizon">
 </head>
@@ -21,22 +21,29 @@
     </header>
 
     <main>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Animi dolorem quae nulla nisi doloremque, tenetur totam iusto,
-            voluptates, minus odit at ipsum libero numquam atque explicabo
-            temporibus non neque. Cumque.
-        </p>
-        <button class="btn">Click Me!</button>
-    </main>
-
-    <section class="hello">
-        <div class="hello-backdrop hidden">
-            <div class="hello-container hidden">
-                <span>Hello World!</span>
-                <button class="btn">close</button>
+        <div class="input-container">
+            <label for="search-input">Enter a Pokémon:</label>
+            <input type="search" value="" name="search-input" id="search-input" required>
+            <button id="search-button">Search!</button>
+        </div>
+        <div class="main-container">
+            <div id="types">
+            </div>
+            <img class="sprite-container"/>
+            <div class="stats-container">
+                <span>Name:</span><span class="stats" id="pokemon-name"></span>
+                <span>ID:</span><span class="stats" id="pokemon-id"></span>
+                <span>Weight:</span><span class="stats" id="weight"></span>
+                <span>Height:</span><span class="stats" id="height"></span>
+                <span>HP:</span><span class="stats" id="hp"></span>
+                <span>ATK:</span><span class="stats" id="attack"></span>
+                <span>DEF:</span><span class="stats" id="defense"></span>
+                <span>SP ATK: </span><span class="stats" id="special-attack"></span>
+                <span>SP DEF:</span><span class="stats" id="special-defense"></span>
+                <span>SPD:</span><span class="stats" id="speed"></span>
             </div>
         </div>
-    </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Equirizon. All rights reserved.</p>

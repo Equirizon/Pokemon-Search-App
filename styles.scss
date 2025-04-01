@@ -1,20 +1,34 @@
 @use "sass:color";
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 // @import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"; <-- Normalize.css
-$text-color: #ffecec;
 $font-family: "Inter", sans-serif;
-$background-color: #653cbc;
-$button-bg-color: hsl(337, 74%, 45%);
+
+//color palette
+$main-color-0: #F6E652;
+$main-color-1: #F6BD20;
+$main-color-2: #C99C29;
+$dark-color: #9B5200;
+$grey-color: #41414A;
+$contrast-color: #C52018; 
+
+//appplied colors
 $color: #6956f4;
+$background-color: $main-color-0;
+$button-bg-color: $contrast-color;
+$button-text-color: white;
+$text-color: $grey-color;
+
+//spacing
+$spacing: 1.5rem;
 
 :root {
-    --text-color: #{$text-color};
+    --text-color: #{$grey-color};
     --font-family: #{$font-family};
-    --background: #{$background-color};
-    --button-bg-color: #{$button-bg-color};
+    --background: #{$main-color-0};
+    --button-bg-color: #{$contrast-color};
     --border-radius: 8px;
-    --spacing: 1rem;
-    --transition: 0.3s ease-in-out;
+    --spacing: #{$spacing};
+    --transition: 0.2s ease-in-out;
 }
 
 * {
@@ -55,66 +69,184 @@ a {
     }
 }
 
+header h1 {
+    text-align: center;
+}
+
+#search-input {
+    width: 100%;
+    padding: calc($spacing/4);
+    border: 1px solid $dark-color;
+    border-radius: var(--border-radius);
+    background-color: white;
+    color: $text-color;
+    font-size: 1rem;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: $spacing;    
+
+    &:focus {
+        outline: none;
+        border-color: $button-bg-color;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
 button, .btn {
     width: auto;
     background-color: $button-bg-color;
-    color: $text-color;
+    color: $button-text-color;
     border: none;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     padding: 0.75rem 1.5rem;
     cursor: pointer;
     transition: var(--transition);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 
     &:hover {
-        background-color: color.adjust($button-bg-color, $lightness: 10%);
+        background-color: color.scale($button-bg-color, $lightness: 10%);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        background-color: color.scale($button-bg-color, $lightness: -10%);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        transform: scale(0.98);
+        transition: var(--transition);
+    }
+
+}
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    padding: $spacing;
+    background-color: $background-color;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin: $spacing auto;
+    width: 15rem;
+
+    input [type="text"] {
+        margin-bottom: $spacing;
+    }
+    button {
+        width: 80%;
+        margin: $spacing auto;
     }
 }
 
-.hello-backdrop {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    backdrop-filter: blur(2px);
-    animation: fade-in 200ms ease-in-out;
-}    
-
-.hello-container {
+.stats-container {
     display: grid;
-    grid-template: repeat(2, 1fr) / 2fr 2fr 1.5fr;
-    gap: 0;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    width: 30rem;
+    background: #5a5a5a;
+    color: rgb(255, 255, 255);
+    padding: $spacing;
+    gap: $spacing;
+    margin: $spacing auto;
+    text-align: center;
     border-radius: var(--border-radius);
-    background-color: $color;
-    height: min-content;
-    width: 90%;
-    max-width: 600px;
-    z-index: 2;
-    transition: var(--transition);
-    animation: fade-in 200ms ease-in-out;
-    
-    span {
-        grid-area: 1 / 1 / 1 / 4;
-        margin: .5rem ;
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
-    button {
-        grid-area: 2 / 3 / 3 / 4;
-        margin: .5rem ;
-        z-index: 2;
-    }
+.sprite-container {
+    width: 15rem;
+    display: block;
+    margin: auto;
+}
+
+#types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+@mixin type-style($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 0.2rem 0.5rem;
+    margin: 0.2rem;
+    border-radius: calc(var(--border-radius) * 1.2);
+    border: 1px solid color.scale($bg-color, $lightness: -30%);
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.normal-type {
+    @include type-style(#A8A77A, white);
+}
+
+.fire-type {
+    @include type-style(#EE8130, white);
+}
+
+.water-type {
+    @include type-style(#6390F0, white);
+}
+
+.electric-type {
+    @include type-style(#F7D02C, black);
+}
+
+.grass-type {
+    @include type-style(#7AC74C, white);
+}
+
+.ice-type {
+    @include type-style(#96D9D6, black);
+}
+
+.fighting-type {
+    @include type-style(#C22E28, white);
+}
+
+.poison-type {
+    @include type-style(#A33EA1, white);
+}
+
+.ground-type {
+    @include type-style(#E2BF65, black);
+}
+
+.flying-type {
+    @include type-style(#A98FF3, white);
+}
+
+.psychic-type {
+    @include type-style(#F95587, white);
+}
+
+.bug-type {
+    @include type-style(#A6B91A, white);
+}
+
+.rock-type {
+    @include type-style(#B6A136, white);
+}
+
+.ghost-type {
+    @include type-style(#735797, white);
+}
+
+.dragon-type {
+    @include type-style(#6F35FC, white);
+}
+
+.dark-type {
+    @include type-style(#705746, white);
+}
+
+.fairy-type {
+    @include type-style(#D685AD, white);
 }
 
 .hidden {
@@ -122,10 +254,17 @@ button, .btn {
     opacity: 0;
 }
 
+@media (max-width: 768px) {
+    .sprite-container {
+        width: 40%;
+    }
+    .stats-container {
+        width: 90%;
+        max-width: 100%;
+    }
+}
+
 @keyframes fade-in {
     from {opacity: 0;}
     to {opacity: 1;}
 }
-
-
-// <---- boilerplate code ends here! ---->
