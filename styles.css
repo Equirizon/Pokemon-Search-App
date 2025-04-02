@@ -6,7 +6,7 @@
   --button-bg-color: #C52018;
   --border-radius: 8px;
   --spacing: 1.5rem;
-  --transition: 0.2s ease-in-out;
+  --transition: 0.1s ease-in-out;
 }
 
 * {
@@ -43,7 +43,7 @@ a {
   transition: var(--transition);
 }
 a:hover {
-  color: rgb(190, 181.7666666667, 250.2333333333);
+  color: rgb(112.6978417266, 112.6978417266, 128.3021582734);
 }
 
 header h1 {
@@ -60,7 +60,6 @@ header h1 {
   font-size: 1rem;
   transition: var(--transition);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
 }
 #search-input:focus {
   outline: none;
@@ -87,7 +86,6 @@ button:hover, .btn:hover {
 button:active, .btn:active {
   background-color: rgb(177.3, 28.8, 21.6);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-  transform: scale(0.98);
   transition: var(--transition);
 }
 
@@ -102,33 +100,65 @@ main {
   display: flex;
   flex-direction: column;
   margin: 1.5rem auto;
-  width: 15rem;
+  width: 20rem;
+  box-sizing: border-box;
+}
+.input-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.5rem 2.25rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.input-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
 .input-container input [type=text] {
   margin-bottom: 1.5rem;
 }
 .input-container button {
   width: 80%;
-  margin: 1.5rem auto;
+  margin: 0.75rem auto;
+  border-radius: 2rem;
 }
 
 .stats-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 30rem;
-  background: #5a5a5a;
-  color: rgb(255, 255, 255);
-  padding: 1.5rem;
-  gap: 1.5rem;
+  width: 26rem;
+  background: rgb(239, 243, 243);
+  color: #41414A;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0;
   margin: 1.5rem auto;
   text-align: center;
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: #000000 5px solid;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.25);
+}
+.stats-container span {
+  padding: 0.6rem 0;
+  border: 5px solid black;
 }
 
 .sprite-container {
-  width: 15rem;
   display: block;
+  width: 20rem;
+  margin: 1.5rem auto;
+}
+.sprite-container img {
+  display: block;
+  width: 15rem;
   margin: auto;
 }
 
@@ -138,6 +168,7 @@ main {
   justify-content: center;
   gap: 0.5rem;
   margin-top: 1rem;
+  font: 500 1.2rem "Inter", sans-serif;
 }
 
 .normal-type {
@@ -148,9 +179,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(122.7227272727, 121.8, 80.2772727273);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .fire-type {
@@ -161,9 +192,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(185.00625, 87.5875, 15.19375);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .water-type {
@@ -174,9 +205,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(20.8157894737, 83.2631578947, 216.4842105263);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .electric-type {
@@ -187,9 +218,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(196.2589041096, 159.9835616438, 7.4410958904);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .grass-type {
@@ -200,9 +231,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(83.5531914894, 146.6276595745, 45.8723404255);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .ice-type {
@@ -213,9 +244,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(69.1573426573, 187.7426573427, 182.4328671329);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .fighting-type {
@@ -226,9 +257,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(135.8, 32.2, 28);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .poison-type {
@@ -239,9 +270,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(114.1, 43.4, 112.7);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .ground-type {
@@ -252,9 +283,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(192.6262295082, 148.8475409836, 36.2737704918);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .flying-type {
@@ -265,9 +296,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(88.6870967742, 38.4064516129, 231.7935483871);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .psychic-type {
@@ -278,9 +309,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(225.8295454545, 7.9704545455, 74.3909090909);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .bug-type {
@@ -291,9 +322,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(116.2, 129.5, 18.2);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .rock-type {
@@ -304,9 +335,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(127.4, 112.7, 37.8);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .ghost-type {
@@ -317,9 +348,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(80.5, 60.9, 105.7);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .dragon-type {
@@ -330,9 +361,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(63.5292682927, 3.1243902439, 210.3756097561);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .dark-type {
@@ -343,9 +374,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(78.4, 60.9, 49);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .fairy-type {
@@ -356,9 +387,9 @@ main {
   border-radius: calc(var(--border-radius) * 1.2);
   border: 1px solid rgb(181.8024539877, 61.0975460123, 120.7049079755);
   font-size: 0.9rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   cursor: default;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .hidden {
@@ -366,13 +397,28 @@ main {
   opacity: 0;
 }
 
+.rotate {
+  animation: rotate 400ms linear infinite;
+}
+
 @media (max-width: 768px) {
   .sprite-container {
-    width: 40%;
+    width: 90%;
+  }
+  .sprite-container .sprite {
+    width: 45.7%;
   }
   .stats-container {
     width: 90%;
     max-width: 100%;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 @keyframes fade-in {

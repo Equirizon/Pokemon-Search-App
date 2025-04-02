@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pokemon Search App</title>
+    <title>Pokémon Search App</title>
     <link rel="icon" href="/assets/icon1.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="script.js" defer></script>
@@ -17,19 +17,25 @@
 <body>
 
     <header>
-        <h1>Welcome to Pokemon Search App!</h1>
+        <h1>Welcome to Pokémon Search App!</h1>
     </header>
 
     <main>
         <div class="input-container">
-            <label for="search-input">Enter a Pokémon:</label>
-            <input type="search" value="" name="search-input" id="search-input" required>
-            <button id="search-button">Search!</button>
+            <form action="#" method="get">
+                <div>
+                    <label for="search-input">Enter a Pokémon:</label>
+                    <input type="search" value="" name="text" id="search-input" required aria-label="Search Pokémon">
+                </div>
+                <button id="search-button" type="submit">Search!</button>
+            </form>
         </div>
         <div class="main-container">
             <div id="types">
             </div>
-            <img class="sprite-container"/>
+            <div class="sprite-container">
+                <img class="sprite"/>
+            </div>
             <div class="stats-container">
                 <span>Name:</span><span class="stats" id="pokemon-name"></span>
                 <span>ID:</span><span class="stats" id="pokemon-id"></span>
